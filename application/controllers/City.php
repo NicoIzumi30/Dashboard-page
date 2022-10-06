@@ -96,7 +96,7 @@ class City extends CI_Controller
     {
         $where = array(
             'id' => $id
-        );
+        );  
         $getdata = $this->db->get_where('city', ['id' => $id])->row_array();
        $delima = unlink(FCPATH . 'assets/image/city/' . $getdata['image']);
         if($delima){

@@ -237,6 +237,7 @@ class Menu extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['role'] = $this->db->get_where('user_role', ['id' => $role_id])->row_array();
         $this->db->where('id !=', 1);
+        $this->db->where('id !=', 6);
         $data['menu'] = $this->db->get('user_menu')->result_array();
         $this->load->view('template/header', $data);
         $this->load->view('menu/role-access', $data);
